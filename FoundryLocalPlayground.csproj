@@ -20,7 +20,6 @@
     <PackageReference Include="Microsoft.AI.Foundry.Local" Version="0.1.0" />
     <PackageReference Include="Microsoft.Extensions.AI" Version="9.7.1" />
     <PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="9.7.1-preview.1.25365.4" />
-    <PackageReference Include="Microsoft.SemanticKernel" Version="1.61.0" />
     <PackageReference Include="OllamaSharp" Version="5.3.4" />
     <PackageReference Include="Spectre.Console" Version="0.50.1-preview.0.21" />
   </ItemGroup>
