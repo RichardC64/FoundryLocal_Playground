@@ -2,6 +2,10 @@
 Ceci est un exemple d'utilisation de FoundryLocal.
 Pour plus de renseignements, rendez-vous sur le site [devdevdev.net](https://devdevdev.net) et la vidéo consacrée sur Youtube.
 
+[![Miniature YouTube](https://img.youtube.com/vi/jKUDknKGPqc/0.jpg)](https://youtu.be/jKUDknKGPqc)
+
+[Regarder la vidéo sur YouTube](https://youtu.be/jKUDknKGPqc)
+
 # Pour installer FoundryLocal : 
 ```bash
 winget install Microsoft.FoundryLocal
@@ -20,3 +24,4 @@ Si vous voulez simuler plusieurs appels en même temps, modifiez le paramètres _i
 private readonly int[] _iterations = [0]; // [0, 1, 2, 3];
 ```
 Enjoy!
+
