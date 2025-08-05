@@ -9,8 +9,8 @@ namespace FoundryLocalPlayground;
 
 public class UseFoundryOllama : IUse
 {
-    private readonly string _alias = "phi-4";
-    private readonly string _ollamaModelId = "mistral";
+    private readonly string _foundryLocalModel = "phi-4";
+    private readonly string _ollamaModel = "mistral";
     private readonly Uri _ollamaUri = new Uri("http://localhost:11434/");
     
     private readonly int[] _iterations = [0]; // [0, 1, 2, 3];
@@ -65,9 +65,9 @@ public class UseFoundryOllama : IUse
     private async Task<Func<IChatClient>> CreateFoundryLocalChatClientAsync()
     {
         AnsiConsole.MarkupLine("[yellow]Démarrage de FoundryLocal[/]");
-        var manager = await FoundryLocalManager.StartModelAsync(_alias);
+        var manager = await FoundryLocalManager.StartModelAsync(_foundryLocalModel);
 
-        AnsiConsole.MarkupLine($"[green]FoundryLocal démarré avec succès pour le modèle : {_alias}[/]");
+        AnsiConsole.MarkupLine($"[green]FoundryLocal démarré avec succès pour le modèle : {_foundryLocalModel}[/]");
         // Infos sur les modèles du cache
         var cacheFolder = await manager.GetCacheLocationAsync();
         var table = new Table
@@ -85,7 +85,7 @@ public class UseFoundryOllama : IUse
         
 
         // Infos sur les paramètres de l'API
-        var model = await manager.GetModelInfoAsync(_alias);
+        var model = await manager.GetModelInfoAsync(_foundryLocalModel);
         if (model == null) throw new ArgumentException("Model non trouvé");
 
         table = new Table
@@ -105,6 +105,6 @@ public class UseFoundryOllama : IUse
 
     private Func<IChatClient> CreateOllamaChatClient()
     {
-        return () => new OllamaApiClient(_ollamaUri, _ollamaModelId);
+        return () => new OllamaApiClient(_ollamaUri, _ollamaModel);
     }
 }
